@@ -12,7 +12,7 @@ How are we doing it? What softwares are we going to use?
 
 ## MVP + User Story
 
-The MVP for our product should be able to hold a virtual meeting with audio and video. 
+The MVP for our product should be able to hold a virtual meeting with audio and video.
 Our user is anyone who need to hold meeting or attend meeting but unable to do so physically.
 The user story is, for example, a professor in college do the lecture online and all of his/her students are attending this meeting at the same time with audio and video connection.
 
