@@ -1,4 +1,6 @@
-### OpenVidu project
+# OpenVidu project
+
+## Sprint 2
 
 This project pull from <https://github.com/OpenVidu/openvidu-tutorials.git>.
 
@@ -27,3 +29,13 @@ node server.js https://localhost:4443 MY_SECRET
 ```
 docker run -p 4443:4443 --rm -e OPENVIDU_SECRET=MY_SECRET openvidu/openvidu-server-kms:2.15.0
 ```
+
+
+
+## Sprint 3
+
+- 10/21 
+  - Choose Google Firebase as host to deploy our WebRTC project
+  - Database schema draft 1.1
+    - ![Database schema](C:\Users\Niantong Dong\Desktop\2020_Fall_BU\EC601-WebRTC-Security-Analysis\openvidu-js-node\Database schema.png)
+
