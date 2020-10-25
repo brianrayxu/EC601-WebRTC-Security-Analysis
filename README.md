@@ -36,7 +36,7 @@ In this section, we will go in detail of our implementations and experiments.
  webpage. The specific tutorial we chose was the one called "openvidu-js-node" which includes 
 
 
-<img src="Images/openvidunodejs.png" alt="openvidu system" width="200"/>
+<img src="Images/openvidunodejs.png" alt="openvidu system" width="800"/>
 
 ## Authentication Replacement
 (Talk about using a Database to support authentication)
