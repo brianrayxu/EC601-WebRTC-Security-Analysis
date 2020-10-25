@@ -11,7 +11,7 @@ One of the biggest challenges which these products prioritize is the security su
 
 Specifically, we are trying to create our own communication portal using Openvidu, an open source framework that supports real-time video and audio meeting app (using the WebRTC protocol). Initially, we will be implementing local examples of Openvidu and then move to online implementations using AWS to host our necessary servers.
 
-<img src="Images/openvidulogo.png" alt="Openvidu" height="200" width="1000"/>
+<img src="Images/openvidulogo.png" alt="Openvidu" height="150" width="750"/>
 
 From there, we will start our security analysis by using WireShark to monitor the data packet traffic to see if we can find a security weakness in our platform. In addition, we will also monitor the logs on our AWS instance to see if any logs that OpenVidu produces are exposing client info.
 
