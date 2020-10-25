@@ -32,15 +32,25 @@ WebRTC is one of the most popular real-time communication frameworks which can b
 In this section, we will go in detail of our implementations and experiments.
 ### Local Implementations
  Our first step is to just get a simple bare-bones instance up and running on a local machine. In order to achieve this, we followed the tutorials located on the 
- <a href="https://en.wikipedia.org/wiki/Hobbit#Lifestyle" title="Hobbit lifestyles">Openvidu Documentation</a>
+ <a href="https://docs.openvidu.io/en/2.15.0/tutorials/" title="Openvidu Docs">Openvidu Documentation</a> 
+ webpage. The specific tutorial we chose was the one called "openvidu-js-node" which includes 
+
+
+(Talk about using a Database to support authentication)
+
 
 ### AWS Implementation
+Once our local implementation was up and running without any issues, we deployed an instance on AWS in order to further mimic a standard use-case. 
+
+
+![](Images/openviduexample.png)
+
 
 ### Security Analysis
 
 #### Wireshark - Data Stream Security
 
-####
+#### 
 
 
 ## MVP + User Story
