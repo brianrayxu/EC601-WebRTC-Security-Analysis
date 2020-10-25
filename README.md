@@ -1,9 +1,7 @@
 # EC601-WebRTC-Security-Analysis
-
-EC601 Term Project- Analysis of OpenVidu and other WebRTC Applications
-
 ![](Images/weblogo.png)
 
+EC601 Term Project- Analysis of OpenVidu and other WebRTC Applications
 ## Introduction
 
 WebRTC is one of the most popular real-time communication protocol which can build on top of your browser. It is supported by every major browser and countless popular products utilize its versatility such as Facebook Messenger, Discord, and Google Hangouts.
@@ -52,13 +50,13 @@ Once our local implementation was up and running without any issues, we deployed
 
 
 ### Security Analysis
-
+In this section, we will talk about the experiments we did in order to evaluate security efforts from Openvidu.
 #### Wireshark - Data Stream Security
 
 #### 
 
 
-## MVP + User Story
+## Conclusion
 
 The MVP for our product should be able to hold a virtual meeting with audio and video.
 Our user is anyone who need to hold meeting or attend meeting but unable to do so physically.
