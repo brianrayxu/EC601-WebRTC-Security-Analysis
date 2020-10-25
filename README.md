@@ -4,9 +4,9 @@ EC601 Term Project- Analysis of OpenVidu and other WebRTC Applications
 
 ## Introduction
 
-WebRTC is one of the most popular real-time communication framework which can build on top of your browser. Countless popular products utilize its versatility such as Facebook Messenger, Discord, and Google Hangouts.
+WebRTC is one of the most popular real-time communication protocol which can build on top of your browser. It is supported by every major browser and countless popular products utilize its versatility such as Facebook Messenger, Discord, and Google Hangouts.
 
-![](images/webrtcex.PNG)
+![](Images/webrtcex.png)
 
 One of the biggest challenges which these products prioritize is the security surrounding the communications and personal information of their users. Privacy is a necessity and even the smallest exposure of proprietary user data could have a significant effect on the product as well as the victims involved. In order to prevent any successful attacks on any WebRTC apps, we will do an analysis of WebRTC by creating our own sample system using the protocol and will attempt several tests and angles of analysis in order to further underestand the details of WebRTC and the security it offers and/or needs. 
 
