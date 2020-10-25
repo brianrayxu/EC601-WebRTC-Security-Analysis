@@ -1,4 +1,4 @@
-<img src="Images/webrtclogo.png" alt="WebRTC" width="200"/>
+<img src="Images/weblogo.png" alt="WebRTC" width="200"/>
 
 EC601 Term Project- Analysis of OpenVidu and other WebRTC Applications
 ## Introduction
