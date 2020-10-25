@@ -24,8 +24,9 @@ On a side note, we also want to examine the vulnerability of peer-to-peer commun
 The MVP for our product should be an instance o OpenVidu that is able to create a session and hold a virtual meeting with audio and video.
 
 =======
+## User-stories
 
-WebRTC is one of the most popular real-time communication frameworks which can build on top of your browser. Unlike online meeting services in the past, WebRTC do not need any plug-in application to run a virtual meeting on your browser, which lower the risk from security issue. Especially in the pandemic, we hold a lot of important meeting online. The security of our communication is crucial for everyone. In this case, we are trying to create our own communication portal using Openvido framework locally and hopefully we can set up an AWS server to run it. Also, we will analyze the data packet traffic to see if we can find a security weakness in our platform. On the other hand, we want to examine the vulnerability of peer-to-peer communication, however, the Openvido doesn't support that for now, so we will use another simple WebRTC example to see if we can build a peer-to-peer communication software and anaylze the vulnerability.
+As a academic user of WebRTC products such as Openvidu, ...
 
 ## Technical Approach - Brian
 In this section, we will go in detail of our implementations and experiments.
@@ -35,7 +36,7 @@ In this section, we will go in detail of our implementations and experiments.
  webpage. The specific tutorial we chose was the one called "openvidu-js-node" which includes 
 
 
-![](Images/openvidunodejs.png)
+<img src="Images/openvidunodejs.png" alt="openvidu system" width="200"/>
 
 ## Authentication Replacement
 (Talk about using a Database to support authentication)
