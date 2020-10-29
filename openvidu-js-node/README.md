@@ -37,7 +37,7 @@ docker run -p 4443:4443 --rm -e OPENVIDU_SECRET=MY_SECRET openvidu/openvidu-serv
 - 10/21 
   - Choose Google Firebase as host to deploy our WebRTC project
   - Database schema draft 1.1
-    - ![Database schema](C:\Users\Niantong Dong\Desktop\2020_Fall_BU\EC601-WebRTC-Security-Analysis\openvidu-js-node\Database schema.png)
+    -![Image of draft](https://github.com/brianrayxu/EC601-WebRTC-Security-Analysis/blob/master/openvidu-js-node/Database%20schema.png)
 
 - 10/28
   - Successfully deploy our website on https://www.ec601-openvidu-team1.com/
