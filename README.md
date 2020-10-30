@@ -45,7 +45,9 @@ The domain supplied needs to be a FQDN (Fully Qualified Domain Name) and not a w
 
 Here is a general overview <a href="https://docs.openvidu.io/en/2.15.0/deployment/deploying-aws/" title="Deploying on AWS">link</a> to the tutorial we followed in order to deploy onto AWS.
 
+For more details, check our code section README for a step by step walkthrough of how to deploy onto AWS.
 
+During our deployment process, we were having issues creating our stack and getting our application to properly deploy at our domain but resolved the issues by 
 ![](Images/openviduexample.png)
 
 
