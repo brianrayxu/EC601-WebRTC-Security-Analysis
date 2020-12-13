@@ -1,7 +1,6 @@
 <img src="Images/weblogo.png" alt="WebRTC" width="200"/>
 
-EC601 Term Project- Analysis of OpenVidu and other WebRTC Applications
-## Introduction
+# EC601 Term Project- Analysis of OpenVidu and other WebRTC Applications
 
 WebRTC is one of the most popular real-time communication protocol which can build on top of your browser. It is supported by every major browser and countless popular products utilize its versatility such as Facebook Messenger, Discord, and Google Hangouts.
 
