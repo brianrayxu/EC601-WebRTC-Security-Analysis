@@ -114,18 +114,22 @@ First, we create a custom phishlet, a webpage to 'act' as the legitimate service
 From here, we inspect what tag is used for the form where the user enters their unique session code in order to join or create a room. This tag is called "roomInput' and we specify in evilginx what tag we are looking to 'steal' from our victims on our copied webpage. Then, evilginx sets up our Let's encrypt certificates and hosts the fake webpage at a specificed domain with a secured connection. In order to simulate a victim falling for our phishing attack, we just access the URL of the fake webpage and input some unique code for our sesion. Evilginx2 takes the input data, saves it, and redirects the user to the legitimate site after inputting the data the user originally entered. This is so the user won't even be aware that they just got phished while the hackers run off with the stolen credentials. 
 
 We found that Openvidu does not implement any protection to phishing attacks because once a hacker has the unique string ID of a room, they are free to enter and listen as they please. There are no security features implemented that stop one from doing so and there are many very simple ones that Openvidu can choose to implement. One such is any
+method of secondary authentication besides the unique session string. This would make it so phishers could not actually just enter rooms unless they had both the unique string ID as well as the passcode to the room. We see popular VoIP applications such as Zoom implement features such as this.
 
 
+## Conclusion
+Overall, we found the security surrounding Openvidu to be pretty lack-luster. There are no gaping security exploits but there are some very simple security features that Openvidu should implement. These include DoS protections such as greylisting and simple authentication for sessions. Without these implementations, Openvidu is a pretty unsecure platform for Real-Time communications. However, this may be intentional as the sacrifices taken in security are maken up for by the convenience and ease of implementation that Openvidu emphasizes and provides in their WebRTC product. 
 
-## Conclusion 
-
-The MVP for our product should be able to hold a virtual meeting with audio and video.
-Our user is anyone who need to hold meeting or attend meeting but unable to do so physically.
-The user story is, for example, a professor in college do the lecture online and all of his/her students are attending this meeting at the same time with audio and video connection.
 
 ## References
 
-https://medium.com/@Arafat./graphical-user-interface-using-vnc-with-amazon-ec2-instances-549d9c0969c5
+<a href="https://github.com/brianrayxu/EC601-WebRTC-Security-Analysis/blob/master/Images/Poster%20Presentation.jpg" title="Poster Presentation">Poster Presentation</a> 
 
-https://medium.com/@macsat101/packet-sniffing-using-wireshark-on-aws-183b7983685d
+<a href="https://github.com/OpenVidu/openvidu" title="Openvidu Github">Openvidu Github</a> 
+
+<a href="https://docs.openvidu.io/en/2.15.0/" title="Openvidu Documentation">Openvidu Documentation</a> 
+
+<a href="https://github.com/kgretzky/evilginx2" title="Evilginx2">Evilginx2</a> 
+
+<a href="https://medium.com/@Arafat./graphical-user-interface-using-vnc-with-amazon-ec2-instances-549d9c0969c5" title="VNC + AWS">VNC Server on AWS</a> 
 
