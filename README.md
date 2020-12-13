@@ -40,45 +40,11 @@ For more details, check our code section README for a step by step walkthrough o
 During our deployment process, we were having issues creating our stack and getting our application to properly deploy at our domain but resolved the issues by 
 
 ### Security Analysis - Communication Layer - Sprint 4
-After deploying our application onto AWS, we started our experiments by first looking at the most obvious angle attack, an attempt to eploit communications. 
-
-### Security Analysis - DoS Attacks - Sprint 4 
-Another popular angle attack is to do a Denial of Service attack (DoS). 
-
-
-
-
-### Security Analysis - Signalling Layer - Sprint 5
-<img src="https://breakdev.org/content/images/size/w2000/2018/07/evilginx_blog_title2.jpg" alt="evilginx2" width="200"/>
-
-In our final sprint, we decided to deploy an attack onto the signalling layer of our application. This took the form of a Man in the Middle(MiTM) attack. MiTM attacks in our application could take place in two different places. They could either be a phishing attack between the server and client or in between two clients directly. We chose to take the approach of a phishing attack as these are more common and more practical for hackers to pull off. A phishing attack is when a third party acts as some trusted component of the application the attack is based on. Popular phishing attempts include pop-ups pretending to be Microsoft and saying your PC 'needs' attentiion or fake webpages asking for autentication in order to steal credentials off their victims. 
-
-In order to pull off an attack, we use the open-source project evilginx2. Evilginx2 is a CLI application which makes the art of phising easy for anyone. Although the package seems to be a bad idea and promote malicious behavior, it is actually used as a research tool and to do exactly what we are doing, research ethods to defend against phishing attacks.
-
-First, we create a custom phishlet, a webpage to 'act' as the legitimate service, from a copy of the html used in Openvidu's "Create a Room" web page:
-
-<img src="Images/webpage.png" alt="CreateARoom" width="800"/>
-
-From here, we inspect what tag is used for the form where the user enters their unique session code in order to join or create a room. This tag is called "roomInput' and we specify in evilginx what tag we are looking to 'steal' from our victims on our copied webpage. Then, evilginx sets up our Let's encrypt certificates and hosts the fake webpage at a specificed domain with a secured connection. In order to simulate a victim falling for our phishing attack, we just access the URL of the fake webpage and input some unique code for our sesion. Evilginx2 takes the input data, saves it, and redirects the user to the legitimate site after inputting the data the user originally entered. This is so the user won't even be aware that they just got phished while the hackers run off with the stolen credentials. 
-
-We found that Openvidu does not implement any protection to phishing attacks because once a hacker has the unique string ID of a room, they are free to enter and listen as they please. There are no security features implemented that stop one from doing so and there are many very simple ones that Openvidu can choose to implement. One such is any
-
-
- 
-
-
-
-
-
-
-
-### Wireshark traffic monitor - Sprint4
-
 #### Client side monitor
 
 To do so, we can use Wireshark on any operating system. Once we open the Wireshark and filter the source and destination IP using our elastic IP address. We can monitor all the traffic out and from our elastic IP to our IP address. We simulate a scenario that one user enter the OpenVidu website and create a session. Then, the other user join this session. Both users turn on the audio and camera. They also leave some message and then leave the session. This is one of the most common scenario in our life. Using the Wireshark,  we can sniff all the data between me and the server. We may find some useful data which may leak some credential information. Here is a sample we found.
 
-![ipaddress](C:\Users\Niantong Dong\Desktop\2020_Fall_BU\EC601-WebRTC-Security-Analysis\Files\ipaddress.PNG)
+![ipaddress](Images\ipaddress.PNG)
 
 This figure shows that our encrypted username is actually keep changing in different stage, which is a good method to keep the username safe. However, the other protocol, like the ARP, will leak the IP and MAC address by broadcasting them, which is not the problem of the WebRTC. The other thing we found is that the chat message is actually encrypted using TSL. To read more,  the pcap file is in the "Files" folder and the file name is "webrtc".
 
@@ -123,13 +89,35 @@ After that, we can use vncviewer and connect to the localhost:5902. Now, you can
 
 We also simulate the same scenario for our this one. On the server side, we can have more information than client side. For example, we can see how STUN server binding the virtual address to certain username.
 
-![STUN](C:\Users\Niantong Dong\Desktop\2020_Fall_BU\EC601-WebRTC-Security-Analysis\Images\STUN.PNG)
+![STUN](Images\STUN.PNG)
 
 Also, we can sniff that how the server and client exchange the encryption method using UDP.
 
- ![UDP](C:\Users\Niantong Dong\Desktop\2020_Fall_BU\EC601-WebRTC-Security-Analysis\Images\UDP.PNG)
+ ![UDP](Images\UDP.PNG)
 
 In this pcap file, we can see how the WebRTC actually works like how they establish connection between users using UDP, TCP, STUN and TURN to find the best way to establish communication. This method is called Interactive Connectivity Establishment, ICE. To read more, find the "server" under the "Files"
+
+### Security Analysis - DoS Attacks - Sprint 4 
+Another popular angle attack is to do a Denial of Service attack (DoS). 
+
+
+
+
+### Security Analysis - Signalling Layer - Sprint 5
+<img src="https://breakdev.org/content/images/size/w2000/2018/07/evilginx_blog_title2.jpg" alt="evilginx2" width="200"/>
+
+In our final sprint, we decided to deploy an attack onto the signalling layer of our application. This took the form of a Man in the Middle(MiTM) attack. MiTM attacks in our application could take place in two different places. They could either be a phishing attack between the server and client or in between two clients directly. We chose to take the approach of a phishing attack as these are more common and more practical for hackers to pull off. A phishing attack is when a third party acts as some trusted component of the application the attack is based on. Popular phishing attempts include pop-ups pretending to be Microsoft and saying your PC 'needs' attentiion or fake webpages asking for autentication in order to steal credentials off their victims. 
+
+In order to pull off an attack, we use the open-source project evilginx2. Evilginx2 is a CLI application which makes the art of phising easy for anyone. Although the package seems to be a bad idea and promote malicious behavior, it is actually used as a research tool and to do exactly what we are doing, research ethods to defend against phishing attacks.
+
+First, we create a custom phishlet, a webpage to 'act' as the legitimate service, from a copy of the html used in Openvidu's "Create a Room" web page:
+
+<img src="Images/webpage.png" alt="CreateARoom" width="800"/>
+
+From here, we inspect what tag is used for the form where the user enters their unique session code in order to join or create a room. This tag is called "roomInput' and we specify in evilginx what tag we are looking to 'steal' from our victims on our copied webpage. Then, evilginx sets up our Let's encrypt certificates and hosts the fake webpage at a specificed domain with a secured connection. In order to simulate a victim falling for our phishing attack, we just access the URL of the fake webpage and input some unique code for our sesion. Evilginx2 takes the input data, saves it, and redirects the user to the legitimate site after inputting the data the user originally entered. This is so the user won't even be aware that they just got phished while the hackers run off with the stolen credentials. 
+
+We found that Openvidu does not implement any protection to phishing attacks because once a hacker has the unique string ID of a room, they are free to enter and listen as they please. There are no security features implemented that stop one from doing so and there are many very simple ones that Openvidu can choose to implement. One such is any
+
 
 
 ## Conclusion 
