@@ -98,8 +98,7 @@ https://drive.google.com/file/d/1xTf4Jl5jkMAmzxBjolcrH-xnR70tU82a/view?usp=shari
 ### Security Analysis - DoS Attacks - Sprint 4 
 Another popular angle attack is to do a Denial of Service attack (DoS). We want to know if the OpenVidu has any defense mechanism against DoS attack.Since we don't have a large amount of resource to attack the AWS server. To show our idea, we manually create 10 - 20 users using the same IP address and join the same session. The platform does not have any effecitve mechanism to defense the DoS. It only disconnect the user when the user does not connect to the hardware.
 To improve it, we can introduce a mechanism called greylisting, which means that if a user connect to a meeting and the behaviour is suspicious, for example, not talking at all or no message sent, the platform should disconnect it. 
-
-
+<img src="Images\ddos test.PNG" alt="dos attack" width="800"/
 
 ### Security Analysis - Signalling Layer - Sprint 5
 <img src="https://breakdev.org/content/images/size/w2000/2018/07/evilginx_blog_title2.jpg" alt="evilginx2" width="200"/>
