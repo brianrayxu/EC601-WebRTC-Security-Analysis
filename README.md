@@ -19,7 +19,7 @@ The specific experiments we chose to accomplish are the following:
 
 On a side note, we also want to examine the vulnerability of peer-to-peer communications with WebRTC but Openvido doesn't support it yet. So we will use another simple WebRTC example to see if we can build a peer-to-peer communication software and anaylze the vulnerability.
 
-## Technical Approach - Brian
+## Technical Approach
 In this section, we will go in detail of our implementations and experiments.
 ### Local Implementations - Sprint 1 + 2
  Our first step is to just get a simple bare-bones instance up and running on a local machine. In order to achieve this, we followed the tutorials located on the 
