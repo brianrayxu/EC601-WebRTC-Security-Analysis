@@ -43,9 +43,7 @@ During our deployment process, we were having issues creating our stack and gett
 #### Client side monitor
 
 To do so, we can use Wireshark on any operating system. Once we open the Wireshark and filter the source and destination IP using our elastic IP address. We can monitor all the traffic out and from our elastic IP to our IP address. We simulate a scenario that one user enter the OpenVidu website and create a session. Then, the other user join this session. Both users turn on the audio and camera. They also leave some message and then leave the session. This is one of the most common scenario in our life. Using the Wireshark,  we can sniff all the data between me and the server. We may find some useful data which may leak some credential information. Here is a sample we found.
-
-![ipaddress](Images\ipaddress.PNG)
-
+<img src="Images\ipaddress.PNG" alt="IP address" width="800"/>
 This figure shows that our encrypted username is actually keep changing in different stage, which is a good method to keep the username safe. However, the other protocol, like the ARP, will leak the IP and MAC address by broadcasting them, which is not the problem of the WebRTC. The other thing we found is that the chat message is actually encrypted using TSL. To read more,  the pcap file is in the "Files" folder and the file name is "webrtc".
 
 #### Server side monitor
@@ -88,12 +86,10 @@ vncserver -geometry 1340x750
 After that, we can use vncviewer and connect to the localhost:5902. Now, you can have a GUI for our server and install the Wireshark.
 
 We also simulate the same scenario for our this one. On the server side, we can have more information than client side. For example, we can see how STUN server binding the virtual address to certain username.
-
-![STUN](Images\STUN.PNG)
+<img src="Images\STUN.PNG" alt="STUN stream" width="800"/>
 
 Also, we can sniff that how the server and client exchange the encryption method using UDP.
-
- ![UDP](Images\UDP.PNG)
+<img src="Images\UDP.PNG" alt="UDP stream" width="800"/>
 
 In this pcap file, we can see how the WebRTC actually works like how they establish connection between users using UDP, TCP, STUN and TURN to find the best way to establish communication. This method is called Interactive Connectivity Establishment, ICE. To read more, find the "server" under the "Files"
 
