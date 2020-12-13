@@ -57,9 +57,11 @@ In order to pull off an attack, we use the open-source project evilginx2. Evilgi
 
 First, we create a custom phishlet, a webpage to 'act' as the legitimate service, from a copy of the html used in Openvidu's "Create a Room" web page:
 
-<img src="Images/webpage.png" alt="openvidu system" width="800"/>
+<img src="Images/webpage.png" alt="CreateARoom" width="800"/>
 
 From here, we inspect what tag is used for the form where the user enters their unique session code in order to join or create a room. This tag is called "roomInput' and we specify in evilginx what tag we are looking to 'steal' from our victims on our copied webpage. Then, evilginx sets up our Let's encrypt certificates and hosts the fake webpage at a specificed domain with a secured connection. In order to simulate a victim falling for our phishing attack, we just access the URL of the fake webpage and input some unique code for our sesion. Evilginx2 takes the input data, saves it, and redirects the user to the legitimate site after inputting the data the user originally entered. This is so the user won't even be aware that they just got phished while the hackers run off with the stolen credentials. 
+
+We found that Openvidu does not implement any protection to phishing attacks because once a hacker has the unique string ID of a room, they are free to enter and listen as they please. There are no security features implemented that stop one from doing so and there are many very simple ones that Openvidu can choose to implement. One such is any
 
 
  
