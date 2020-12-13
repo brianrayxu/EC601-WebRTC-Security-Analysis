@@ -13,18 +13,12 @@ Specifically, we are trying to create our own communication portal using Openvid
 
 From there, we will start our security analysis by using WireShark to monitor the data packet traffic to see if we can find a security weakness in our platform. In addition, we will also monitor the logs on our AWS instance to see if any logs that OpenVidu produces are exposing client info.
 
-(INSERT FUTURE EXPERIMENTS HERE)
+The specific experiments we chose to accomplish are the following:
+- Communications Layer Attack
+- DoS Attack
+- Signalling Layer Attack
 
 On a side note, we also want to examine the vulnerability of peer-to-peer communications with WebRTC but Openvido doesn't support it yet. So we will use another simple WebRTC example to see if we can build a peer-to-peer communication software and anaylze the vulnerability.
-
-## MVP + User Story
-
-The MVP for our product should be an instance o OpenVidu that is able to create a session and hold a virtual meeting with audio and video.
-
-=======
-## User-stories
-
-As a academic user of WebRTC products such as Openvidu, ...
 
 ## Technical Approach - Brian
 In this section, we will go in detail of our implementations and experiments.
