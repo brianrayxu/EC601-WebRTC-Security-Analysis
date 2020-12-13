@@ -96,7 +96,7 @@ PCAP files links:
 https://drive.google.com/file/d/1N3gEzFzUonNOHwKUF46JfZpZDEyxpjPt/view?usp=sharing,%20
 https://drive.google.com/file/d/1xTf4Jl5jkMAmzxBjolcrH-xnR70tU82a/view?usp=sharing
 ### Security Analysis - DoS Attacks - Sprint 4 
-Another popular angle attack is to do a Denial of Service attack (DoS). 
+Another popular angle attack is to do a Denial of Service attack (DoS). We want to know if the OpenVidu has any defense mechanism against DoS attack.Since we don't have a large amount of resource to attack the AWS server. To show our idea, we manually create 10 - 20 users using the same IP address and join the same session. The platform does not have any effecitve mechanism to defense the DoS. It only disconnect the user when the user does not connect to the hardware.
 
 
 
