@@ -95,10 +95,13 @@ In this pcap file, we can see how the WebRTC actually works like how they establ
 PCAP files links:
 https://drive.google.com/file/d/1N3gEzFzUonNOHwKUF46JfZpZDEyxpjPt/view?usp=sharing,%20
 https://drive.google.com/file/d/1xTf4Jl5jkMAmzxBjolcrH-xnR70tU82a/view?usp=sharing
+
 ### Security Analysis - DoS Attacks - Sprint 4 
 Another popular angle attack is to do a Denial of Service attack (DoS). We want to know if the OpenVidu has any defense mechanism against DoS attack.Since we don't have a large amount of resource to attack the AWS server. To show our idea, we manually create 10 - 20 users using the same IP address and join the same session. The platform does not have any effecitve mechanism to defense the DoS. It only disconnect the user when the user does not connect to the hardware.
 To improve it, we can introduce a mechanism called greylisting, which means that if a user connect to a meeting and the behaviour is suspicious, for example, not talking at all or no message sent, the platform should disconnect it. 
 <img src="Images\ddos test.PNG" alt="dos attack" width="800"/>
+
+Above is an image of the session with numerous users. Observe how all the users listed in the lower left corner have the same user name. This is because we just opened the room from a different tab on the same machine 10-20 times. 
 
 ### Security Analysis - Signalling Layer - Sprint 5
 <img src="https://breakdev.org/content/images/size/w2000/2018/07/evilginx_blog_title2.jpg" alt="evilginx2" width="200"/>
@@ -109,7 +112,7 @@ In order to pull off an attack, we use the open-source project evilginx2. Evilgi
 
 First, we create a custom phishlet, a webpage to 'act' as the legitimate service, from a copy of the html used in Openvidu's "Create a Room" web page:
 
-<img src="Images/webpage.png" alt="CreateARoom" width="800"/>
+<img src="Images/webpage.PNG" alt="CreateARoom" width="800"/>
 
 From here, we inspect what tag is used for the form where the user enters their unique session code in order to join or create a room. This tag is called "roomInput' and we specify in evilginx what tag we are looking to 'steal' from our victims on our copied webpage. Then, evilginx sets up our Let's encrypt certificates and hosts the fake webpage at a specificed domain with a secured connection. In order to simulate a victim falling for our phishing attack, we just access the URL of the fake webpage and input some unique code for our sesion. Evilginx2 takes the input data, saves it, and redirects the user to the legitimate site after inputting the data the user originally entered. This is so the user won't even be aware that they just got phished while the hackers run off with the stolen credentials. 
 
