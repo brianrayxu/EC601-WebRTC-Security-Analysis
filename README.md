@@ -46,9 +46,11 @@ After deploying our application onto AWS, we started our experiments by first lo
 Another popular angle attack is to do a Denial of Service attack (DoS). 
 
 
+
+
+### Security Analysis - Signalling Layer - Sprint 5
 <img src="https://breakdev.org/content/images/size/w2000/2018/07/evilginx_blog_title2.jpg" alt="evilginx2" width="200"/>
 
-### Security Analysis - Signalling Layer - Sprint 5   width="200"/>
 In our final sprint, we decided to deploy an attack onto the signalling layer of our application. This took the form of a Man in the Middle(MiTM) attack. MiTM attacks in our application could take place in two different places. They could either be a phishing attack between the server and client or in between two clients directly. We chose to take the approach of a phishing attack as these are more common and more practical for hackers to pull off. A phishing attack is when a third party acts as some trusted component of the application the attack is based on. Popular phishing attempts include pop-ups pretending to be Microsoft and saying your PC 'needs' attentiion or fake webpages asking for autentication in order to steal credentials off their victims. 
 
 In order to pull off an attack, we use the open-source project evilginx2. Evilginx2 is a CLI application which makes the art of phising easy for anyone. Although the package seems to be a bad idea and promote malicious behavior, it is actually used as a research tool and to do exactly what we are doing, research ethods to defend against phishing attacks.
