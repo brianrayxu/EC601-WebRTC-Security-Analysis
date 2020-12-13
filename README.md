@@ -49,11 +49,13 @@ During our deployment process, we were having issues creating our stack and gett
 ![](Images/openviduexample.png)
 
 
-### Security Analysis
-In this section, we will talk about the experiments we did in order to evaluate security efforts from Openvidu.
-#### Wireshark - Data Stream Security
+### Security Analysis - Communication Layer - Sprint 4
+After deploying our application onto AWS, we started our experiments by first looking at the most obvious angle attack, an attempt to eploit communications. 
 
-#### 
+### Security Analysis - DoS Attacks - Sprint 4 
+Another 
+### Security Analysis - Signalling Layer - Sprint 5
+In our final sprint, we decided to deploy an attack onto the signalling layer of our application. This took the form of a Man in the Middle(MiTM) attack. MiTM attacks in our application could take place in two different places, 
 
 
 ## Conclusion
